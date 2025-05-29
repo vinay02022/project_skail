@@ -18,7 +18,10 @@ app.use(cors({
     'http://localhost:3001', 
     'http://127.0.0.1:3000', 
     'http://127.0.0.1:3001',
-    'https://your-frontend-domain.com' // Add your actual deployed frontend domain here when you deploy frontend
+    'https://frontend-r1d28g599-vinay-07s-projects.vercel.app',
+    'https://frontend-rouge-nine-92.vercel.app',
+    'https://project-ad98-frontend.vercel.app', // Generic pattern for your project
+    /^https:\/\/.*\.vercel\.app$/ // Allow any vercel.app subdomain for your deployments
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
