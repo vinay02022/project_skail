@@ -11,7 +11,7 @@ connectDB();
 
 const app = express();
 
-// Middleware
+// Middleware  //adding multiple origin here sir to test and avoid cors error  
 app.use(cors({
   origin: [
     'http://localhost:3000', 
@@ -20,8 +20,8 @@ app.use(cors({
     'http://127.0.0.1:3001',
     'https://frontend-r1d28g599-vinay-07s-projects.vercel.app',
     'https://frontend-rouge-nine-92.vercel.app',
-    'https://project-ad98-frontend.vercel.app', // Generic pattern for your project
-    /^https:\/\/.*\.vercel\.app$/ // Allow any vercel.app subdomain for your deployments
+    'https://project-ad98-frontend.vercel.app', 
+    /^https:\/\/.*\.vercel\.app$/ // Allow sir any vercel.app
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -48,7 +48,7 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// 404 handler
+// here i am creating 404 handler
 app.use('*', (req, res) => {
   res.status(404).json({
     success: false,
@@ -56,7 +56,7 @@ app.use('*', (req, res) => {
   });
 });
 
-// Global error handler
+// here i am creating global error handler
 app.use((err, req, res, next) => {
   console.error('Global error:', err.stack);
   
