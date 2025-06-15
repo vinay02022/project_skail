@@ -1,0 +1,412 @@
+.login-container {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+}
+
+/* Left Side - Purple Gradient */
+.login-left {
+  background: linear-gradient(231.62deg, #C37EFF -26.53%, #3A0B63 117.16%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+  overflow: hidden;
+}
+
+.left-content {
+  position: relative;
+  z-index: 2;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 80px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.logo.white {
+  color: white;
+}
+
+.logo.purple {
+  color: #8B5CF6;
+}
+
+.logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-image {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.left-text h1 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: white;
+  margin-bottom: 24px;
+  max-width: 500px;
+}
+
+.left-text p {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.5;
+  max-width: 400px;
+}
+
+/* Wave Pattern */
+.wave-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+  opacity: 0.6;
+}
+
+.wave-pattern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.03) 2px,
+      rgba(255, 255, 255, 0.03) 4px
+    );
+}
+
+/* Right Side - Login Form */
+.login-right {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.right-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+}
+
+.right-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 40px;
+}
+
+.form-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.form-header h2 {
+  font-size: 28px;
+  font-weight: 400;
+  color: #333;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.form-header .brand-name {
+  font-weight: 700;
+  color: #8B5CF6;
+}
+
+.error-message {
+  background: #FEF2F2;
+  color: #DC2626;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #FECACA;
+  margin-bottom: 24px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 16px 20px;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  font-size: 16px;
+  background: white;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #8B5CF6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+.input-group input::placeholder {
+  color: #9CA3AF;
+}
+
+.field-error {
+  color: #DC2626;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #6B7280;
+  cursor: pointer;
+  position: relative;
+}
+
+.remember-me input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+}
+
+.checkmark {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #D1D5DB;
+  border-radius: 3px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.remember-me input[type="checkbox"]:checked + .checkmark {
+  background: #8B5CF6;
+  border-color: #8B5CF6;
+}
+
+.remember-me input[type="checkbox"]:checked + .checkmark::after {
+  content: '✓';
+  position: absolute;
+  top: -2px;
+  left: 2px;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.forgot-password {
+  font-size: 14px;
+  color: #3B82F6;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  padding: 0;
+  font-family: inherit;
+}
+
+.forgot-password:hover {
+  color: #1D4ED8;
+  text-decoration: underline;
+}
+
+.login-button {
+  width: 100%;
+  padding: 16px;
+  background: #8B5CF6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 8px;
+}
+
+.login-button:hover:not(:disabled) {
+  background: #7C3AED;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+.login-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.divider {
+  text-align: center;
+  margin: 24px 0;
+  position: relative;
+}
+
+.divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #E5E7EB;
+}
+
+.divider span {
+  background: white;
+  padding: 0 16px;
+  color: #9CA3AF;
+  font-size: 14px;
+}
+
+.google-button {
+  width: 100%;
+  padding: 16px;
+  background: white;
+  color: #374151;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: not-allowed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+  margin-bottom: 24px;
+}
+
+.signup-link {
+  text-align: center;
+  font-size: 14px;
+  color: #6B7280;
+}
+
+.signup-link a {
+  color: #3B82F6;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.signup-link a:hover {
+  color: #1D4ED8;
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .login-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .login-left {
+    display: none;
+  }
+  
+  .login-right {
+    min-height: 100vh;
+  }
+  
+  .right-header {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .right-content {
+    padding: 20px;
+  }
+  
+  .form-container {
+    max-width: 100%;
+  }
+  
+  .form-header h2 {
+    font-size: 24px;
+  }
+  
+  .left-text h1 {
+    font-size: 36px;
+  }
+  
+  .login-left {
+    padding: 40px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .right-content {
+    padding: 16px;
+  }
+  
+  .form-header {
+    margin-bottom: 32px;
+  }
+  
+  .input-group input {
+    padding: 14px 16px;
+  }
+  
+  .login-button {
+    padding: 14px;
+  }
+} 
